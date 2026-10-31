@@ -75,8 +75,7 @@
 
 /* Containers */
 @utility max-container {
-  width: 100%;
-  margin-inline: auto;
+  @apply mx-auto max-w-360;
 }
 
 @utility padding-container {
@@ -171,7 +170,7 @@
 
 /* Section-specific utilities */
 @utility hero-map {
-  @apply bg-pattern-2 absolute top-0 right-0 h-screen w-screen bg-cover bg-center;
+  @apply bg-pattern-2 absolute top-0 right-0 h-screen w-screen bg-cover bg-center md:-right-28 xl:-top-60;
 }
 
 @utility camp-quote {

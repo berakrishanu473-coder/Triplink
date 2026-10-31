@@ -62,13 +62,13 @@ const Navbar = () => {
 
     {isOpen && 
         <div className="relative flex justify-end lg:hidden">
-            <div className="absolute bg-green-900 mr-7 -mt-3.5 z-30 h-45 w-55 rounded-2xl">
+            <div className="absolute bg-green-50 mr-7 -mt-3.5 z-30 h-45 w-60 rounded-2xl">
                 <ul className="inline-block mt-0.35 lg:hidden">
                     {NAV_LINKS.map((link) => (
                         <Link 
                             key={link.key} 
                             href={link.href}
-                            className="regular-16 text-gray-200 cursor-pointer border-b flexStart pt-1.25 pb-1.25 ml-5 transition-all hover:font-bold"
+                            className="regular-16 text-gray-100 cursor-pointer border-b flexStart pt-1.25 pb-1.25 ml-5 transition-all hover:font-bold"
                         >
                             <i className={`${link.icon} mr-1.5`}></i> {link.label}
                         </Link>
