@@ -1,26 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Font (Preflight applies --font-sans to html/body automatically) */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  /* Custom colors */
+  --color-green-50: #30AF5B;
+  --color-green-90: #292C27;
+
+  --color-gray-10: #EEEEEE;
+  --color-gray-20: #A2A2A2;
+  --color-gray-30: #7B7B7B;
+  --color-gray-50: #585858;
+  --color-gray-90: #141414;
+
+  --color-orange-50: #FF814C;
+  --color-blue-70: #021639;
+  --color-yellow-50: #FEC601;
+
+  /* Custom breakpoints */
+  --breakpoint-xs: 25rem;
+  --breakpoint-3xl: 105rem;
+  --breakpoint-4xl: 137.5rem;
+
+  /* Custom maximum width */
+  --container-10xl: 1512px;
+
+  /* Custom border radius */
+  --radius-5xl: 40px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Background image utilities */
+@utility bg-img-1 {
+  background-image: url("/img-1.png");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@utility bg-img-2 {
+  background-image: url("/img-2.png");
+}
+
+@utility bg-feature {
+  background-image: url("/feature-bg.png");
+}
+
+@utility bg-pattern {
+  background-image: url("/pattern.png");
+}
+
+@utility bg-pattern-2 {
+  background-image: url("/pattern-bg.png");
+}
+
+/* Buttons */
+@utility btn_white {
+  @apply border-white bg-white px-8 py-3 text-green-50;
+}
+
+@utility btn_white_text {
+  @apply border-white bg-white px-8 py-3 text-gray-90;
+}
+
+@utility btn_green {
+  @apply border-green-50 bg-green-50 px-8 py-5 text-white;
+}
+
+@utility btn_dark_green {
+  @apply bg-green-90 px-8 py-4 text-white transition-all hover:bg-black;
+}
+
+@utility btn_dark_green_outline {
+  @apply border-gray-20 bg-green-90 px-8 py-5 text-white;
+}
+
+/* Containers */
+@utility max-container {
+  width: 100%;
+  margin-inline: auto;
+}
+
+@utility padding-container {
+  @apply px-6 lg:px-20 3xl:px-0;
+}
+
+/* Flex helpers */
+@utility flexCenter {
+  @apply flex items-center justify-center;
+}
+
+@utility flexBetween {
+  @apply flex items-center justify-between;
+}
+
+@utility flexStart {
+  @apply flex items-center justify-start;
+}
+
+@utility flexEnd {
+  @apply flex items-center justify-end;
+}
+
+/* Typography */
+@utility regular-64 {
+  @apply text-[64px] leading-[120%] font-normal;
+}
+
+@utility regular-40 {
+  @apply text-[40px] leading-[120%] font-normal;
+}
+
+@utility regular-32 {
+  @apply text-[32px] font-normal;
+}
+
+@utility regular-24 {
+  @apply text-[24px] font-normal;
+}
+
+@utility regular-20 {
+  @apply text-[20px] font-normal;
+}
+
+@utility regular-18 {
+  @apply text-[18px] font-normal;
+}
+
+@utility regular-16 {
+  @apply text-[16px] font-normal;
+}
+
+@utility regular-14 {
+  @apply text-[14px] font-normal;
+}
+
+@utility medium-14 {
+  @apply text-[14px] font-semibold;
+}
+
+@utility bold-88 {
+  @apply text-[88px] leading-[120%] font-bold;
+}
+
+@utility bold-64 {
+  @apply text-[64px] leading-[120%] font-bold;
+}
+
+@utility bold-52 {
+  @apply text-[52px] leading-[120%] font-bold;
+}
+
+@utility bold-40 {
+  @apply text-[40px] leading-[120%] font-bold;
+}
+
+@utility bold-32 {
+  @apply text-[32px] leading-[120%] font-bold;
+}
+
+@utility bold-20 {
+  @apply text-[20px] font-bold;
+}
+
+@utility bold-18 {
+  @apply text-[18px] font-bold;
+}
+
+@utility bold-16 {
+  @apply text-[16px] font-bold;
+}
+
+/* Section-specific utilities */
+@utility hero-map {
+  @apply bg-pattern-2 absolute top-0 right-0 h-screen w-screen bg-cover bg-center;
+}
+
+@utility camp-quote {
+  @apply absolute -right-6 bottom-4 w-35 lg:bottom-10 xl:-right-8 xl:w-46.5 3xl:right-0;
+}
+
+@utility feature-phone {
+  @apply absolute top-[13%] z-10 hidden max-w-375 rotate-15 md:-left-16 lg:flex 3xl:left-20;
+}
+
+@utility get-app {
+  @apply bg-pattern relative mx-auto flex w-full max-w-360 flex-col justify-between gap-32 overflow-hidden bg-green-90 bg-cover bg-center bg-no-repeat px-6 py-12 text-white sm:flex-row sm:gap-12 sm:py-24 lg:px-20 xl:max-h-149.5 2xl:rounded-5xl;
+}
+
+@utility hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
